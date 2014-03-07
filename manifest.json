@@ -1,14 +1,14 @@
 {
   "name": "Autocognito for Reddit",
   "version": "0.1",
-  "description": "Automatically turns a tab incognito if its a NSFW subreddit",
-  "content_scripts": [ {
-      "js": [ "jquery.js", "content_script.js"  ],
-      "matches": [ "https://www.reddit.com/r/*", "http://www.reddit.com/r/*" ]    
-  } ],
+  "description": "Automatically opens NSFW subreddits in incognito mode",
+  "background": {
+    "scripts": ["jquery.js", "background.js"]
+  },
   "permissions" : [
-    "declarativeContent",
-    "tabs"
+    "tabs",
+    "history",
+    "webNavigation"
   ],
   "icons" : {
     "19" : "icon-19.png",
