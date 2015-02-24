@@ -2,7 +2,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(function(details) {
   var url = details.url;
   var bare_url = url.replace("https://", "").replace("http://", "");
   var match_string = "www.reddit.com/r/";
-  if (match_string.substring(0, match_string.length) === match_string) {
+  if (bare_url.substring(0, match_string.length) === match_string) {
     console.log(url);
     console.log(bare_url);
   	var subreddit = bare_url.split('/')[2];
